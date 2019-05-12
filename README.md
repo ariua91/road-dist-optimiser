@@ -35,4 +35,24 @@ Reversing flaw 2 gives a route with a still longer SL distance of 4,402.95 M but
 
 ### Set up OSRM
 
+This build catered for Windows - should be easier on linux.
+Also possible to [run as C++ API](http://project-osrm.org/docs/v5.5.1/api/#introduction) for speed - I leave that for a better coder. 
+
+ 1. Get OSRM build for windows http://build.project-osrm.org/
+ 2. Get SG OSRM map http://download.geofabrik.de/asia.html
+ 3. Run OSRM https://github.com/Project-OSRM/osrm-backend/wiki/Running-OSRM
+    ```
+    osrm-extract.exe malaysia-singapore-brunei-latest.osm.pbf -p car.lua
+    osrm-partition malaysia-singapore-brunei-latest.osrm
+    osrm-customize malaysia-singapore-brunei-latest.osrm
+
+    osrm-routed --algorithm=MLD malaysia-singapore-brunei-latest.osrm
+    ```
+    API docs: http://project-osrm.org/docs/v5.5.1/api/#general-options
+    Will be avail on http://localhost:5000
+
 ### Set up JSPRIT
+
+ 1. Make sure you have JDK
+ 2. Get maven (optional, you can get jsprit from git)
+ 3. 
