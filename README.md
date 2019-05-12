@@ -10,6 +10,13 @@ End result can be a backend tool as a POC.
 Objective is to time the additional delay, especially at scale of points (200 points?)
 
 
+## Usage
+
+ 1. Host OSRM on http://localhost:5000
+ 2. cd my-app
+ 3. mvn compile single:assembly
+ 4. java -cp target/vrp-jar-with-dependencies.jar com/graphhopper/jsprit/examples/RoadExample
+
 ## Background
 
 JSPRIT uses straight line distances for optimisation.
